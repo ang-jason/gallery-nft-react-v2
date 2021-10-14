@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import Card from 'components/card'
 import { GalleryContext } from 'App'
+import {Card} from 'domains/gallery'
 import { Button } from 'components/button'
 
 

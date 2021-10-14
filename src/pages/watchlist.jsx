@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import WatchlistCard from '../components/watchlist-card'
-import { GalleryContext } from '../App'
+import { WatchlistCard } from 'domains/watchlist'
+import { GalleryContext } from 'App'
 
 
 export default function Watchlist({watchList}) {

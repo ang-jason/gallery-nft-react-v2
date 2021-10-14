@@ -1,9 +1,9 @@
 import React from 'react'
-import RemoveListBanner from './removelistbanner'
+import RemoveListBanner from 'components/removelistbanner'
 
 
 
-export default function WatchlistCard({item,handleRemoveListClick}) {
+export function WatchlistCard({item,handleRemoveListClick}) {
     // console.log(item)
 
     const inNotInside = () => {

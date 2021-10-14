@@ -3,7 +3,7 @@ import './index.css'
 import React, {useState , useEffect} from 'react'
 import { useQuery } from 'react-query'
 import Navbar from './pages/navbar';
-import Gallery from './pages/gallary';
+import Gallery from './pages/gallery';
 import Watchlist from './pages/watchlist';
 
 
