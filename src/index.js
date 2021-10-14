@@ -1,12 +1,19 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { AuthProvider } from "./domains/auth";
-import "./index.css";
-import { ApplyJob } from "./pages/apply-job";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './App';
+import { QueryClient, QueryClientProvider } from 'react-query'
+// import { ReactQueryDevtools } from 'react-query/devtools'
+const queryClient = new QueryClient()
+
+
 
 ReactDOM.render(
-  <AuthProvider>
-    <ApplyJob />
-  </AuthProvider>,
-  document.querySelector("#root")
+  <QueryClientProvider client={queryClient}>
+    <App />
+    {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+    </QueryClientProvider>
+    ,
+  document.getElementById('root')
 );
+

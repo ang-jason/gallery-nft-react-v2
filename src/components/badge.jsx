@@ -6,7 +6,10 @@ import classNames from "classnames";
  */
 export const Badge = ({ color = "gray", render, ...props }) => {
   const className = classNames(
-    `inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium`,
+    `inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-semibold text-gray-700`,
+    // `inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium`,
+
+    //bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 items-center
     classByColor[color],
     props.className
   );
@@ -26,6 +29,7 @@ const classByColor = {
   red: "bg-red-100 text-red-800",
   yellow: "bg-yellow-100 text-yellow-800",
   gray: "bg-gray-100 text-gray-800",
+  purple:"bg-purple-200 text-gray-800"
 };
 
 Badge.propTypes = {
