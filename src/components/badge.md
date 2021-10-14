@@ -8,6 +8,7 @@
   <Badge color="yellow" className="ml-5">
     Yellow
   </Badge>
+    <Badge color="gray">Gray</Badge>
 </div>
 ```
 
