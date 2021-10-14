@@ -28,8 +28,6 @@ export default function Navbar({setPage}) {
         </div> */}
      </div>
 </nav>
-
-
         </div>
     )
 }
