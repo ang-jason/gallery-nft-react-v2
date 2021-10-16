@@ -1,5 +1,5 @@
 
-[![PayPal donate button](https://img.shields.io/badge/Reacting-NFT-brightblue)](https://github.com/ang-jason/gallery-nft-react-v2/)
+[![PayPal donate button](https://img.shields.io/badge/Reacting-NFT-orange)](https://github.com/ang-jason/gallery-nft-react-v2/)
 
 # Reacting with NFT Gallery
 
