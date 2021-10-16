@@ -51,7 +51,7 @@ export default function Gallery({data, status}) {
                     handleWatchListClick={()=>{
                         addwatchList(asset)  
                     }}
-                    handlefindItem={findItemwatchList(asset)}
+                    handlefindItem={()=>findItemwatchList(asset)}
 
                      />
 

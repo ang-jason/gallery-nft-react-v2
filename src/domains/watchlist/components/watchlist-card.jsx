@@ -24,7 +24,7 @@ export function WatchlistCard({item,handleRemoveListClick}) {
                 </div>
                 <div className="px-6 pt-1 pb-2 flex justify-center justify-items-center justify-self-center items-center">
 
-
+                <div className="flex gap-3">
                 <Badge
                 color="green"
                 // eslint-disable-next-line jsx-a11y/anchor-has-content
@@ -37,16 +37,7 @@ export function WatchlistCard({item,handleRemoveListClick}) {
                 <RemoveListBanner inNotInside={inNotInside}/>
                 </Badge>
 
-
-
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">
-
-                <RemoveListBanner inNotInside={inNotInside}/>
-                
-                
-                
-                </span>
-                {/* <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span> */}
+                </div>
                 </div>
                 </div>
         </div>

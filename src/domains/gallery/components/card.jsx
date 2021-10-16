@@ -12,15 +12,12 @@ export function Card(props) {
     // const ownership  = (props.asset.creator.user.username) ? (props.asset.creator.user.username) :(props.asset.owner.user.username)
     // const {ownership}  = (props.asset.asset.owner.user)
     // console.log(name)
-    const inInside = () => {
-        props.handleWatchListClick()
-    }
+    // const inInside = () => {
+    //     () => {props.handleWatchListClick()}
+    // }
 
     const inNotInside = () => {
-        if (props.handlefindItem){
-            props.handleRemoveListClick()
-            console.log('NO WAY')
-        }
+        props.handleRemoveListClick()
     }
 
     const tempImg = "https://picsum.photos/id/237/500/500"
@@ -41,16 +38,19 @@ export function Card(props) {
             <div className="flex gap-3">
                         <Badge
                 color="green"
-                // eslint-disable-next-line jsx-a11y/anchor-has-content
                 render={(bProps) => <a {...bProps} href={permalink} />}
                 >
                 {id}
                 </Badge>
-            <Badge color="purple"
-            onClick={inInside}
-            >
-            {props.handlefindItem ? <RemoveListBanner inNotInside={inNotInside} />:<AddListBanner/>}
-            </Badge>
+
+             <Badge color="purple" onClick={()=>props.handleWatchListClick()}>
+
+             <AddListBanner/>
+             </Badge>
+
+            {/* <Badge color="purple" onClick={inInside}>
+            {props.handlefindItem ? <AddListBanner/>: <RemoveListBanner inNotInside={inNotInside} />}
+            </Badge> */}
 
             {/* <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"> {usd_price}</span> */}
             </div>

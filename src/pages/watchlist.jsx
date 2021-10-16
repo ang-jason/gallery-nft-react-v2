@@ -15,7 +15,7 @@ export default function Watchlist({watchList}) {
     return (
         <div>
 
-        {watchList.length > 0 ? 
+        {watchList ? 
         (                
             
             <div className="overflow-y-hidden m-3">

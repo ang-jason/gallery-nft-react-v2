@@ -5,6 +5,7 @@ import { useQuery } from 'react-query'
 import Navbar from './pages/navbar';
 import Gallery from './pages/gallery';
 import Watchlist from './pages/watchlist';
+import { watch } from 'fs';
 
 
 export const GalleryContext=React.createContext()
@@ -38,7 +39,7 @@ function App() {
   })
   // console.log(data)
 
-  const [watchList, setwatchList] = useState([])
+  const [watchList, setwatchList] = useState('[]')
 
 
   const nextPagination = () =>{
@@ -68,27 +69,45 @@ function App() {
 
 
   const findItemwatchList = (asset) =>{
+    console.log(watchList)
     const isInside = watchList.find(item => item.asset.id === asset.asset.id)
+    console.log('isInside',isInside)
     // console.log('findItemwatchList',isInside ? true : false)
-    return isInside ? true : false
+    // if (isInside == null)
+    // {
+    //   return false
+    // }
+    // return isInside ? true : false
   }
 
 
   const addwatchList = (asset) => {
       // console.log(asset.asset.id)
-      const isInside = findItemwatchList(asset)
-      if (!isInside){
-        console.log("added")
-        const newWatchList = [asset, ...watchList]
-        setwatchList(newWatchList)
-        saveToLocalStorage(newWatchList)
-      }
-      return 'YEAH'
+      // const isInside = findItemwatchList(asset)
+      // if (!isInside || isInside == null ){
+        console.log("added!!",watchList)
+        if (watchList == null){
+          const newWatchList = [asset]
+          setwatchList(newWatchList)
+          saveToLocalStorage(newWatchList)
+          console.log(newWatchList)
+        }else{
+          const newWatchList = [asset, ...watchList]
+          setwatchList(newWatchList)
+          saveToLocalStorage(newWatchList)
+          console.log(newWatchList)
+        }
+
+      // }
   }
 
   const removewatchList = (asset) =>{
       console.log("removing")
       const newWatchList = watchList.filter((item)=> item.id !== asset.id )
+      if (newWatchList == null)
+      {
+        return []
+      }
       setwatchList(newWatchList)
       saveToLocalStorage(newWatchList);
   }
