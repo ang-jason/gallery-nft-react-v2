@@ -1,0 +1,5 @@
+Loader example:
+
+```jsx
+<Loader/>
+```

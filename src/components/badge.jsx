@@ -34,6 +34,6 @@ const classByColor = {
 
 Badge.propTypes = {
   children: PropTypes.node.isRequired,
-  color: PropTypes.oneOf(["gray", "green", "red", "yellow"]),
+  color: PropTypes.oneOf(["gray", "green", "red", "yellow","purple"]),
   render: PropTypes.func,
 };

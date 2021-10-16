@@ -3,6 +3,7 @@ import { GalleryContext } from 'App'
 import {Card} from 'domains/gallery'
 import { Button } from 'components/button'
 import Loader from 'components/loader'
+// import Search from 'components/search'
 
 
 export default function Gallery({data, status}) {
@@ -19,7 +20,8 @@ export default function Gallery({data, status}) {
     return (
         <div>
 
-    
+            {/* <Search/> */}
+            
     
             <div className="flex content-center items-center justify-center mt-4">
                 <div className="flex gap-4">     
@@ -40,7 +42,7 @@ export default function Gallery({data, status}) {
             (   
                 <div className="overflow-y-hidden">
        
-                <div className="grid grid-cols-3 gap-4 ">
+                <div className="grid grid-cols-3 2xl:grid-cols-6 gap-5 ">
                 {data.asset_events.map(asset =>{
                     return <Card 
                     key={asset.id} 

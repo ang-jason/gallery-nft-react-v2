@@ -1,3 +1,0 @@
-```jsx
-<TextareaField label="Description" />
-```

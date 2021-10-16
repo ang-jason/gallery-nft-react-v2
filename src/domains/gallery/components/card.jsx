@@ -7,7 +7,7 @@ import { Badge } from 'components/badge'
 export function Card(props) {
     // const AddListBanner = props.watchlistComponent
     const { image_url, name, id, permalink, description } = props.asset.asset
-
+    // console.log(image_url)
     // const { descCollection } = props.asset.asset.collection
     // const ownership  = (props.asset.creator.user.username) ? (props.asset.creator.user.username) :(props.asset.owner.user.username)
     // const {ownership}  = (props.asset.asset.owner.user)
@@ -23,7 +23,7 @@ export function Card(props) {
         }
     }
 
-    const tempImg = "http://clipart-library.com/images/pioAgkojT.png"
+    const tempImg = "https://picsum.photos/id/237/500/500"
 
     return (
         <div className="">

@@ -5,7 +5,7 @@ import RemoveListBanner from 'components/removelistbanner'
 
 export function WatchlistCard({item,handleRemoveListClick}) {
     // console.log(item)
-
+    console.log(item)
     const inNotInside = () => {
             handleRemoveListClick()
             console.log('in watchlist cards')
@@ -17,7 +17,7 @@ export function WatchlistCard({item,handleRemoveListClick}) {
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
                 <img className="w-full" src={item.asset.image_url} alt="Sunset in the mountains"/>
                 <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-1">{item.asset.name}</div>
+                <div className="font-bold text-xl mb-1 flex justify-center justify-items-center justify-self-center items-center">{item.asset.name}</div>
                 {/* <p className="text-gray-700 text-base">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. HERE
                 </p> */}
