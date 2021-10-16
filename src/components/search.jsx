@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-export default function Search({getQuery}) {
+export default function Search({q}) {
 
     const [text,setText] = useState('')
 
     const onChange=(q) => {
         setText(q);
-        getQuery(q);
+
     }
 
     return (

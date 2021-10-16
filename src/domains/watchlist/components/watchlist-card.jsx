@@ -1,11 +1,11 @@
 import React from 'react'
 import RemoveListBanner from 'components/removelistbanner'
-
+import { Badge } from 'components/badge'
 
 
 export function WatchlistCard({item,handleRemoveListClick}) {
+
     // console.log(item)
-    console.log(item)
     const inNotInside = () => {
             handleRemoveListClick()
             console.log('in watchlist cards')
@@ -23,9 +23,28 @@ export function WatchlistCard({item,handleRemoveListClick}) {
                 </p> */}
                 </div>
                 <div className="px-6 pt-1 pb-2 flex justify-center justify-items-center justify-self-center items-center">
-                <a className="inline-block bg-green-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2 items-center"
-                href={item.asset.permalink}>{item.id}</a>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2"><RemoveListBanner inNotInside={inNotInside}/></span>
+
+
+                <Badge
+                color="green"
+                render={(bProps) => <a {...bProps} href={item.asset.permalink} />}
+                >
+                {item.id}
+                </Badge>
+
+                <Badge color="purple">
+                <RemoveListBanner inNotInside={inNotInside}/>
+                </Badge>
+
+
+
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">
+
+                <RemoveListBanner inNotInside={inNotInside}/>
+                
+                
+                
+                </span>
                 {/* <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span> */}
                 </div>
                 </div>

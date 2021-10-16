@@ -1,0 +1,6 @@
+Search example:
+
+```jsx
+
+<Search/>
+```
