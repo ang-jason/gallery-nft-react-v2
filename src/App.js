@@ -118,7 +118,7 @@ function App() {
       const newWatchList = watchList.filter((item)=> item.id !== asset.id )
       if (newWatchList == null)
       {
-        return []
+        return
       }
       setwatchList(newWatchList)
       saveToLocalStorage(newWatchList);

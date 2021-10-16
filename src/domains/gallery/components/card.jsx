@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import RemoveListBanner from 'components/removelistbanner'
 import AddListBanner from 'components/addlistbanner'
 import { Badge } from 'components/badge'
@@ -15,10 +15,26 @@ export function Card(props) {
     // const inInside = () => {
     //     () => {props.handleWatchListClick()}
     // }
+    const [yesToggle, setyesToggle] = useState(false)
 
     const inNotInside = () => {
         props.handleRemoveListClick()
     }
+
+
+    const handleCardClick = () => {
+        const inSide = props.handlefindItem()
+        console.log('inSide @ CardClick',inSide)
+        if (!inSide)
+        {
+            setyesToggle(!inSide)
+            props.handleAddListClick()
+        }else{
+            setyesToggle(!inSide)
+            props.handleRemoveListClick()   
+        }
+    }
+
 
     const tempImg = "https://picsum.photos/id/237/500/500"
 
@@ -44,12 +60,12 @@ export function Card(props) {
                 {id}
                 </Badge>
 
-             <Badge color="purple" onClick={()=>props.handleAddListClick()}>
+             <Badge color="purple" onClick={()=>handleCardClick()}>
 
-             <AddListBanner/>
+             {(yesToggle)? <RemoveListBanner inNotInside={inNotInside} />:<AddListBanner/> }
              </Badge>
 
-             {(props.handlefindItem())?<AddListBanner/> : <RemoveListBanner inNotInside={inNotInside} /> }
+
 
 
             {/* <Badge color="purple" onClick={inInside}>
