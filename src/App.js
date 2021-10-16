@@ -5,7 +5,6 @@ import { useQuery } from 'react-query'
 import Navbar from './pages/navbar';
 import Gallery from './pages/gallery';
 import Watchlist from './pages/watchlist';
-import { watch } from 'fs';
 
 
 export const GalleryContext=React.createContext()
@@ -69,9 +68,18 @@ function App() {
 
 
   const findItemwatchList = (asset) =>{
-    console.log(watchList)
-    const isInside = watchList.find(item => item.asset.id === asset.asset.id)
-    console.log('isInside',isInside)
+    console.log('findItemwatchList',asset.asset.id)
+    console.log('watchList',watchList)
+    if (watchList !== null)
+    {
+      const isInside = watchList.find(item => item.asset.id === asset.asset.id)
+      console.log('ininSide',isInside)
+      return isInside ? true : false
+    }else{
+      return false
+    }
+    // const isInside = watchList.some(item => item.asset.id === asset.asset.id)
+    // console.log('isInside',isInside)
     // console.log('findItemwatchList',isInside ? true : false)
     // if (isInside == null)
     // {
@@ -82,10 +90,12 @@ function App() {
 
 
   const addwatchList = (asset) => {
-      // console.log(asset.asset.id)
-      // const isInside = findItemwatchList(asset)
+      console.log(asset.asset.id)
+      const isInside = findItemwatchList(asset)
+      console.log('isInside',isInside)
       // if (!isInside || isInside == null ){
-        console.log("added!!",watchList)
+      console.log("added!! @ addwatchList",watchList)
+      if (!isInside){
         if (watchList == null){
           const newWatchList = [asset]
           setwatchList(newWatchList)
@@ -97,6 +107,8 @@ function App() {
           saveToLocalStorage(newWatchList)
           console.log(newWatchList)
         }
+  
+      }
 
       // }
   }
@@ -114,6 +126,8 @@ function App() {
 
   useEffect(() => {
     getFromLocalStorage()
+    // for development work
+    localStorage.clear()
   }, [])
 
 

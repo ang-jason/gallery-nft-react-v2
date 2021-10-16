@@ -38,15 +38,19 @@ export function Card(props) {
             <div className="flex gap-3">
                         <Badge
                 color="green"
+                // eslint-disable-next-line jsx-a11y/anchor-has-content
                 render={(bProps) => <a {...bProps} href={permalink} />}
                 >
                 {id}
                 </Badge>
 
-             <Badge color="purple" onClick={()=>props.handleWatchListClick()}>
+             <Badge color="purple" onClick={()=>props.handleAddListClick()}>
 
              <AddListBanner/>
              </Badge>
+
+             {(props.handlefindItem())?<AddListBanner/> : <RemoveListBanner inNotInside={inNotInside} /> }
+
 
             {/* <Badge color="purple" onClick={inInside}>
             {props.handlefindItem ? <AddListBanner/>: <RemoveListBanner inNotInside={inNotInside} />}

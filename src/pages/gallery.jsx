@@ -48,7 +48,7 @@ export default function Gallery({data, status}) {
                     key={asset.id} 
                     asset={asset} 
                     handleRemoveListClick={()=>removewatchList(asset)}
-                    handleWatchListClick={()=>{
+                    handleAddListClick={()=>{
                         addwatchList(asset)  
                     }}
                     handlefindItem={()=>findItemwatchList(asset)}
