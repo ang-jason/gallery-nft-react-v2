@@ -27,6 +27,7 @@ export function WatchlistCard({item,handleRemoveListClick}) {
 
                 <Badge
                 color="green"
+                // eslint-disable-next-line jsx-a11y/anchor-has-content
                 render={(bProps) => <a {...bProps} href={item.asset.permalink} />}
                 >
                 {item.id}

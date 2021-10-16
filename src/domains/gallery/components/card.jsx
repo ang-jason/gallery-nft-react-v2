@@ -41,6 +41,7 @@ export function Card(props) {
             <div className="flex gap-3">
                         <Badge
                 color="green"
+                // eslint-disable-next-line jsx-a11y/anchor-has-content
                 render={(bProps) => <a {...bProps} href={permalink} />}
                 >
                 {id}
