@@ -3,7 +3,6 @@
 
 # Reacting with NFT Gallery
 
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/39beea80-9c92-423b-acca-8f949d164fd2/deploy-status)](https://app.netlify.com/sites/reacting-nft-gallery/deploys)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/36092caf-68fc-4996-9357-514aefad562b/deploy-status)](https://app.netlify.com/sites/awesome-js-project/deploys)
-
-Netify: https://awesome-js-project.netlify.app/
+Netify: https://reacting-nft-gallery.netlify.app/ -->
