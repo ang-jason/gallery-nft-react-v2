@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { GalleryContext } from 'App'
 import {Card} from 'domains/gallery'
 import { Button } from 'components/button'
+import Loader from 'components/loader'
 
 
 export default function Gallery({data, status}) {
@@ -30,7 +31,7 @@ export default function Gallery({data, status}) {
                
             </div>
 
-                {status === 'loading' && (<div>Loading data</div>)
+                {status === 'loading' && (<Loader/>)
             }
             {status === 'error' && (<div>Error fetching data</div>)
             }
