@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import RemoveListBanner from 'components/removelistbanner'
 import { Badge } from 'components/badge'
 
@@ -8,7 +8,7 @@ export function WatchlistCard({item,handleRemoveListClick, findItemwatchList}) {
 
     const handleWatchlistCardClick = () => {
         const inSide = findItemwatchList
-        console.log('inSide @ CardClick',inSide)
+        // console.log('inSide @ CardClick',inSide)
         if (inSide)
         {
             handleRemoveListClick()
@@ -18,7 +18,7 @@ export function WatchlistCard({item,handleRemoveListClick, findItemwatchList}) {
 
     return (
         <div>
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg m-1">
                 <img className="w-full" src={item.asset.image_url} alt="Sunset in the mountains"/>
                 <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-1 flex justify-center justify-items-center justify-self-center items-center">{item.asset.name}</div>

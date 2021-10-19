@@ -68,7 +68,7 @@ function App() {
 
 
   const findItemwatchList = (asset) =>{
-    console.log('asset',asset)
+    // console.log('asset',asset)
     console.log('findItemwatchList',asset.asset.id)
     console.log('watchList',watchList)
     if (watchList !== null)
