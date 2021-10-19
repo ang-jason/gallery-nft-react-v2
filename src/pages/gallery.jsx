@@ -42,7 +42,7 @@ export default function Gallery({data, status}) {
             (   
                 <div className="overflow-y-hidden">
        
-                <div className="grid grid-cols-3 m-5 2xl:grid-cols-6 gap-5 2xl:m-2">
+                <div className="grid grid-cols-3 m-5 2xl:grid-cols-5 gap-1 2xl:m-2 2xl:p-4">
                 {data.asset_events.map(asset =>{
                     return <Card 
                     key={asset.id} 

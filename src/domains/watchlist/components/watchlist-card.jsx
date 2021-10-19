@@ -52,17 +52,17 @@ export function WatchlistCard({item,handleRemoveListClick, findItemwatchList}) {
                 </div>
                 </div>
 
-                <div className="pb-5">
+                <div className="p-5">
                 <div className="flex justify-center justify-items-center justify-self-center items-center gap-3">
 
-                    <div className="pt-4 pb-1 text-purple-600 flex space-x-3" >
+                    <div className="pt-1 pb-1 text-purple-600 flex space-x-3" >
                     <Button
                     variant="plain"
                     render={(btnProps) => <a {...btnProps} href={collectionUrl} />}
                     >
                         <div className="flex gap-2 content-center items-center">
                         <CollectionIcon className="h-6 w-6"/>
-                        <div className="font-medium">{collectionName}</div>
+                        <div className="font-normal text-xm">{collectionName}</div>
                         </div>
                     </Button>
                     <Badge

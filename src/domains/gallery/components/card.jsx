@@ -62,9 +62,9 @@ export function Card(props) {
             </div>
       
         </div>
-            <div className="px-6 pt-1 pb-5 flex">
+            <div className="px-6 pt-1 pb-5">
         
-                <div className="flex gap-3">
+                <div className="flex gap-3 m-1">
 
         
 

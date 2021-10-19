@@ -128,7 +128,7 @@ function App() {
   useEffect(() => {
     getFromLocalStorage()
     // for development work
-    localStorage.clear()
+    // localStorage.clear()
   }, [])
 
 
