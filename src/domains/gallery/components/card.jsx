@@ -51,7 +51,7 @@ export function Card(props) {
 
             <div className="pt-4 pb-1 text-purple-600 flex space-x-3" >
                     <Button
-                    variant=""
+                    variant="plain"
                     render={(btnProps) => <a {...btnProps} href={collectionUrl} />}
                     >
                         <div className="flex gap-2 content-center items-center">

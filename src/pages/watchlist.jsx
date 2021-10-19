@@ -20,7 +20,7 @@ export default function Watchlist({watchList}) {
             
             <div className="overflow-y-hidden m-5">
        
-            <div className="grid grid-cols-5 gap-7">
+            <div className="grid grid-cols-4 gap-1">
                 {watchList.map(item=> {
                 return ( <WatchlistCard 
                 key={item.id} 
