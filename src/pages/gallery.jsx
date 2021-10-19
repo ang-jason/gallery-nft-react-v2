@@ -23,7 +23,7 @@ export default function Gallery({data, status,watchlist}) {
             {/* <Search/> */}
             
     
-            <div className="flex content-center items-center justify-center mt-4">
+            <div className="flex content-center items-center justify-center mt-6">
                 <div className="flex gap-4">     
                 
                 <Button variant="outline" onClick={prevPagination}>PREV</Button>

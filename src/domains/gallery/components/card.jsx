@@ -9,8 +9,10 @@ import { Button } from 'components/button'
 
 export function Card(props) {
     // console.log(props)
-    // const AddListBanner = props.watchlistComponent
-    const { image_url, name, id, permalink, description } = props.asset.asset
+    // console.log(props.watchlist)
+    const watchlistAsset = props.watchlist
+    // console.log(watchlistAsset)
+    const { image_url:image_url, name, id, permalink, description } = props.asset.asset
     // console.log(image_url)
     const { name:collectionName, discord_url:collectionDiscordurl, external_url:collectionUrl} = props.asset.asset.collection
     // const ownership  = (props.asset.creator.user.username) ? (props.asset.creator.user.username) :(props.asset.owner.user.username)
@@ -19,31 +21,37 @@ export function Card(props) {
     // console.log(props.asset.asset.collection.discord_url)
     // console.log(props.asset.asset.collection.name)
 
-    const [yesToggle, setyesToggle] = useState(false)
+    let filteredWatchlist = watchlistAsset.filter(item =>
 
-    const handleCardStatus = () => {
-        return props.handlefindItem()
-    }
+        // item.asset.id === props.asset.asset.id
+        // console.log('item.ass.id',item.asset.id)
+        (item.asset.id === props.asset.asset.id)
+    )
+    console.log('filter',filteredWatchlist.length>0)
+    // console.log('props',props.asset.asset.id)
+
+
+    const [yesToggle, setyesToggle] = useState(filteredWatchlist.length>0 || false)
+
 
     const handleCardClick = () => {
         // const inSide = props.handlefindItem()
-        // console.log('inSide @ CardClick',inSide)
+
         const inSide = props.handlefindItem()
+        console.log('inSide @ CardClick',inSide)
         if (inSide)
         {
             // inside
-
             console.log('yesToggle',yesToggle)
-            props.handleRemoveListClick()  
             setyesToggle(false)
+            props.handleRemoveListClick()  
                 // props.handleAddListClick()
         }else{
             //not inside
-            
-            
             console.log('yesToggle',yesToggle)
-            props.handleAddListClick()
             setyesToggle(true)
+            props.handleAddListClick()
+            
             // props.handleRemoveListClick()   
         }
     }
