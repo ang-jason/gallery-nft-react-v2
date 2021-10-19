@@ -31,7 +31,7 @@ function App() {
 
   const [pagination, setPagination] = useState(parseInt(0))
 
-  console.log('pagination',pagination)
+  // console.log('pagination',pagination)
   const { data, status} = useQuery(['gallery',pagination], fetchGallery,{
     staleTime:30000,
     onSuccess: () => console.log('data fetched')
@@ -70,11 +70,11 @@ function App() {
   const findItemwatchList = (asset) =>{
     // console.log('asset',asset)
     console.log('findItemwatchList',asset.asset.id)
-    console.log('watchList',watchList)
+    // console.log('watchList',watchList)
     if (watchList !== null)
     {
       const isInside = watchList.find(item => item.asset.id === asset.asset.id)
-      console.log('ininSide',isInside)
+      // console.log('ininSide',isInside)
       return isInside ? true : false
     }else{
       return false
@@ -91,22 +91,23 @@ function App() {
 
 
   const addwatchList = (asset) => {
-      console.log(asset.asset.id)
+      console.log("adding!! @ addwatchList",asset.asset.id)
       const isInside = findItemwatchList(asset)
-      console.log('isInside',isInside)
+      // console.log('isInside',isInside)
       // if (!isInside || isInside == null ){
-      console.log("added!! @ addwatchList",watchList)
+      // console.log("added!! @ addwatchList",watchList)
+      console.log()
       if (!isInside){
         if (watchList == null){
           const newWatchList = [asset]
           setwatchList(newWatchList)
           saveToLocalStorage(newWatchList)
-          console.log(newWatchList)
+          // console.log(newWatchList)
         }else{
           const newWatchList = [asset, ...watchList]
           setwatchList(newWatchList)
           saveToLocalStorage(newWatchList)
-          console.log(newWatchList)
+          // console.log(newWatchList)
         }
   
       }

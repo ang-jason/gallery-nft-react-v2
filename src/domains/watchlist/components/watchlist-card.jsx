@@ -7,20 +7,14 @@ import { CollectionIcon } from '@heroicons/react/outline'
 import { Button } from 'components/button'
 
 
-export function WatchlistCard({item,handleRemoveListClick, findItemwatchList}) {
+export function WatchlistCard({item,findItemwatchList,handleRemoveListClick }) {
 
-    console.log('item',item.asset.collection)
+    // console.log('item',item.asset.collection)
     const { name:collectionName, discord_url:collectionDiscordurl, external_url:collectionUrl} = item.asset.collection
 
     const handleWatchlistCardClick = () => {
-        const inSide = findItemwatchList
-        // console.log('inSide @ CardClick',inSide)
-        if (inSide)
-        {
             handleRemoveListClick()
-        }
     }
-
 
     return (
         <div className="p-3">
@@ -45,7 +39,7 @@ export function WatchlistCard({item,handleRemoveListClick, findItemwatchList}) {
 
 
                 <Badge color="purple" 
-                onClick={()=> handleWatchlistCardClick()}>
+                onClick={handleWatchlistCardClick}>
                 <RemoveListBanner/>
 
                 </Badge>

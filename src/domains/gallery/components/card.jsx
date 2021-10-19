@@ -21,16 +21,30 @@ export function Card(props) {
 
     const [yesToggle, setyesToggle] = useState(false)
 
+    const handleCardStatus = () => {
+        return props.handlefindItem()
+    }
+
     const handleCardClick = () => {
+        // const inSide = props.handlefindItem()
+        // console.log('inSide @ CardClick',inSide)
         const inSide = props.handlefindItem()
-        console.log('inSide @ CardClick',inSide)
-        if (!inSide)
+        if (inSide)
         {
-            setyesToggle(!inSide)
-            props.handleAddListClick()
+            // inside
+
+            console.log('yesToggle',yesToggle)
+            props.handleRemoveListClick()  
+            setyesToggle(false)
+                // props.handleAddListClick()
         }else{
-            setyesToggle(!inSide)
-            props.handleRemoveListClick()   
+            //not inside
+            
+            
+            console.log('yesToggle',yesToggle)
+            props.handleAddListClick()
+            setyesToggle(true)
+            // props.handleRemoveListClick()   
         }
     }
 
@@ -49,7 +63,7 @@ export function Card(props) {
                         {description}
             </p>
 
-            <div className="pt-4 pb-1 text-purple-600 flex space-x-3" >
+            <div className="pt-5 text-purple-600 flex space-x-3" >
                     <Button
                     variant="plain"
                     render={(btnProps) => <a {...btnProps} href={collectionUrl} />}
@@ -62,12 +76,11 @@ export function Card(props) {
             </div>
       
         </div>
-            <div className="px-6 pt-1 pb-5">
+            <div className="px-6 pb-5">
         
                 <div className="flex gap-3 m-1">
 
-        
-
+    
                     <Badge
                     color="green"
                     // eslint-disable-next-line jsx-a11y/anchor-has-content

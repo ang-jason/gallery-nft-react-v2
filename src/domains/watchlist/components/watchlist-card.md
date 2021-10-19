@@ -25,7 +25,7 @@ const findItemwatchList =  (object) => {
 
 <WatchlistCard 
                 key='itemId'
-                item={item} findItemwatchList={findItemwatchList} 
+                item={item} findItemwatchList={()=> findItemwatchList(item)} 
                 handleRemoveListClick={()=>removewatchList(item)}
                 />
 </div>
