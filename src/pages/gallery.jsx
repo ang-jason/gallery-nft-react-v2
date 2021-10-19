@@ -6,7 +6,7 @@ import Loader from 'components/loader'
 // import Search from 'components/search'
 
 
-export default function Gallery({data, status}) {
+export default function Gallery({data, status,watchlist}) {
     // console.log(data,status)
     const {     
         addwatchList,
@@ -47,10 +47,9 @@ export default function Gallery({data, status}) {
                     return <Card 
                     key={asset.id} 
                     asset={asset} 
+                    watchlist={watchlist}
                     handleRemoveListClick={()=>removewatchList(asset)}
-                    handleAddListClick={()=>{
-                        addwatchList(asset)  
-                    }}
+                    handleAddListClick={()=>{addwatchList(asset)}}
                     handlefindItem={()=>findItemwatchList(asset)}
 
                      />

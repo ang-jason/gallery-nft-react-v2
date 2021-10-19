@@ -150,7 +150,7 @@ function App() {
     <div>
     <GalleryContext.Provider value={galleryContextValue}>
       <Navbar setPage={setPage}/>
-      { page === 'gallery' ? <Gallery data={data} status={status}/> : <Watchlist watchList={watchList}/>
+      { page === 'gallery' ? <Gallery data={data} status={status} watchlist={watchList}/> : <Watchlist watchList={watchList}/>
       }
     </GalleryContext.Provider>
     </div>
