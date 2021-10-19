@@ -20,11 +20,11 @@ export default function Watchlist({watchList}) {
             
             <div className="overflow-y-hidden m-3">
        
-            <div className="grid grid-cols-5 gap-4 ">
+            <div className="grid grid-cols-5 gap-5">
                 {watchList.map(item=> {
                 return ( <WatchlistCard 
                 key={item.id} 
-                item={item} findItemwatchList={findItemwatchList} 
+                item={item} findItemwatchList={findItemwatchList(item)} 
                 handleRemoveListClick={()=>removewatchList(item)}
                 />
                 )})}

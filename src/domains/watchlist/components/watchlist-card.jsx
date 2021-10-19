@@ -1,14 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import RemoveListBanner from 'components/removelistbanner'
 import { Badge } from 'components/badge'
 
 
-export function WatchlistCard({item,handleRemoveListClick}) {
+export function WatchlistCard({item,handleRemoveListClick, findItemwatchList}) {
 
-    // console.log(item)
-    const inNotInside = () => {
+
+    const handleWatchlistCardClick = () => {
+        const inSide = findItemwatchList
+        console.log('inSide @ CardClick',inSide)
+        if (inSide)
+        {
             handleRemoveListClick()
-            console.log('in watchlist cards')
+        }
     }
 
 
@@ -22,7 +26,7 @@ export function WatchlistCard({item,handleRemoveListClick}) {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. HERE
                 </p> */}
                 </div>
-                <div className="px-6 pt-1 pb-2 flex justify-center justify-items-center justify-self-center items-center">
+                <div className="px-6 pt-1 pb-5 flex justify-center justify-items-center justify-self-center items-center">
 
                 <div className="flex gap-3">
                 <Badge
@@ -33,8 +37,10 @@ export function WatchlistCard({item,handleRemoveListClick}) {
                 {item.id}
                 </Badge>
 
-                <Badge color="purple">
-                <RemoveListBanner inNotInside={inNotInside}/>
+                <Badge color="purple" 
+                onClick={()=> handleWatchlistCardClick()}>
+                <RemoveListBanner/>
+
                 </Badge>
 
                 </div>

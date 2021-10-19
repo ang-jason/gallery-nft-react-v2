@@ -17,11 +17,6 @@ export function Card(props) {
     // }
     const [yesToggle, setyesToggle] = useState(false)
 
-    const inNotInside = () => {
-        props.handleRemoveListClick()
-    }
-
-
     const handleCardClick = () => {
         const inSide = props.handlefindItem()
         console.log('inSide @ CardClick',inSide)
@@ -62,7 +57,10 @@ export function Card(props) {
 
              <Badge color="purple" onClick={()=>handleCardClick()}>
 
-             {(yesToggle)? <RemoveListBanner inNotInside={inNotInside} />:<AddListBanner/> }
+             {/* {(yesToggle)? <RemoveListBanner inNotInside={inNotInside} />:<AddListBanner/> }
+             </Badge> */}
+
+             {(yesToggle)? <RemoveListBanner />:<AddListBanner/> }
              </Badge>
 
 
