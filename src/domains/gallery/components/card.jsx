@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-rename */
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, {useState} from 'react'
 import RemoveListBanner from 'components/removelistbanner'
