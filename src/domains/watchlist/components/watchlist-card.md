@@ -9,7 +9,12 @@ const item={
             id:'exampleId',
             image_url:'https://picsum.photos/500',
             permalink:'https://picsum.photos/500',
-            description:'This is the description of the picture'
+            description:'This is the description of the picture',
+            collection:{
+                name:'Collection Name',
+                discord_url:'https://picsum.photos/500',
+                external_url:'https://picsum.photos/500'
+                }
     },
     }
 const removewatchList = (object)=>  {
