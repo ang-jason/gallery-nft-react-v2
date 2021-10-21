@@ -22,17 +22,27 @@ export function Card(props) {
     // console.log(props.asset.asset.collection.discord_url)
     // console.log(props.asset.asset.collection.name)
 
-    let filteredWatchlist = watchlistAsset.filter(item =>
+    let filteredWatchlist = () => {
+        
+        if (watchlistAsset >0) {
+            const fillWatchlist = watchlistAsset.filter(item =>
+                // item.asset.id === props.asset.asset.id
+                // console.log('item.ass.id',item.asset.id)
+                (item.asset.id === props.asset.asset.id))
 
-        // item.asset.id === props.asset.asset.id
-        // console.log('item.ass.id',item.asset.id)
-        (item.asset.id === props.asset.asset.id)
-    )
-    console.log('filter',filteredWatchlist.length>0)
+            return fillWatchlist.length>0
+
+
+        }else{
+            return false
+        }
+    }      
+
+    // console.log('filter',filteredWatchlist.length>0)
     // console.log('props',props.asset.asset.id)
 
 
-    const [yesToggle, setyesToggle] = useState(filteredWatchlist.length>0 || false)
+    const [yesToggle, setyesToggle] = useState(filteredWatchlist || false)
 
 
     const handleCardClick = () => {
