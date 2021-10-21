@@ -15,7 +15,7 @@ export default function Watchlist({watchList}) {
     return (
         <div>
             <div className="flex justify-center pt-4 "><div className="text-semibold text-pink-400 text-5xl">STASH</div> </div>
-        {watchList ? 
+        {watchList.length >0 ? 
         (                
             
             <div className="overflow-y-hidden m-5">
