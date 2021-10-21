@@ -22,7 +22,7 @@ export function Card(props) {
     // console.log(props.asset.asset.collection.discord_url)
     // console.log(props.asset.asset.collection.name)
 
-    // let filteredWatchlist = () => {
+    // let filteredWatchlistTest = () => {
         
     //     if (watchlistAsset >0) {
     //         const fillWatchlist = watchlistAsset.filter(item =>
@@ -37,16 +37,21 @@ export function Card(props) {
     //         return false
     //     }
     // }      
-    const filteredWatchlist = watchlistAsset.filter(item =>
+    // console.log('filteredWatchlistTest',filteredWatchlistTest())
+
+    const filteredWatchlist = watchlistAsset !== null ? watchlistAsset.filter(item =>
         //             // item.asset.id === props.asset.asset.id
         //             // console.log('item.ass.id',item.asset.id)
-                    (item.asset.id === props.asset.asset.id))
-    console.log('filter',filteredWatchlist.length>0)
-    console.log('filter',filteredWatchlist)
+                    (item.asset.id === props.asset.asset.id)) 
+                    : false
+
+    // console.log('filter',filteredWatchlist.length>0)
+
+    // console.log('filter',filteredWatchlist)
     // console.log('props',props.asset.asset.id)
 
 
-    const [yesToggle, setyesToggle] = useState(filteredWatchlist.length>0 || false)
+    const [yesToggle, setyesToggle] = useState(filteredWatchlist.length>0|| false)
 
 
     const handleCardClick = () => {
