@@ -11,7 +11,6 @@ export const GalleryContext=React.createContext()
 
 const apiKey = process.env.REACT_APP_NOT_SECRET_CODE
 
-
 const fetchGallery = async (key) => {
   const pagination = key.queryKey[1]
   const options = {
