@@ -9,11 +9,14 @@ import Watchlist from './pages/watchlist';
 
 export const GalleryContext=React.createContext()
 
+const apiKey = process.env.REACT_APP_NOT_SECRET_CODE
+
+
 const fetchGallery = async (key) => {
   const pagination = key.queryKey[1]
   const options = {
     method: 'GET',
-    headers: {Accept: 'application/json', 'X-API-KEY': 'e31d04e53afe48f3aafb03bc50a1fa72'}
+    headers: {Accept: 'application/json', 'X-API-KEY': apiKey}
   };
 
   // const res = await fetch(`https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20`, options)
