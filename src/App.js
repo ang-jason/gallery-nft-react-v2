@@ -12,25 +12,34 @@ export const GalleryContext=React.createContext()
 const apiKey = process.env.REACT_APP_NOT_SECRET_CODE
 
 const fetchGallery = async (key) => {
-  const pagination = key.queryKey[1]
+  // const pagination = (key.next === undefined) ? null : key.next
+  // console.log('pagenation', pagination)
+  // const pagination = key.queryKey[1]
+
+  // const pagination = (key.queryKey[1] === undefined) ? null : key
+
+  // console.log('pagenation', pagination)
+  console.log('key', key)
+
   const options = {
     method: 'GET',
     headers: {Accept: 'application/json', 'X-API-KEY': apiKey}
   };
 
   // const res = await fetch(`https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20`, options)
-  const res = await fetch(`https://api.opensea.io/api/v1/events?only_opensea=false&offset=${pagination}&limit=18`, options)
+  // const res = await fetch(`https://api.opensea.io/api/v1/events?only_opensea=false&offset=${pagination}&limit=18`, options)
+  const res = await fetch(`https://api.opensea.io/api/v1/events?`, options)
+
+
 
 
   // const res = await fetch(`https://api.opensea.io/api/v1/events?only_opensea=false&offset=0&limit=20`,options)
-
-
 
   // const res = await fetch('http://swapi.dev/api/planets/')
   // only proceed once promise is resolved
   let data = await res.json();
   // only proceed once second promise is resolved
-  console.log(data)
+  console.log("data",data)
   return data;
 }
 
@@ -40,7 +49,7 @@ function App() {
   
   const [page, setPage] = useState('gallery')
 
-  const [pagination, setPagination] = useState(parseInt(0))
+  const [pagination, setPagination] = useState(null)
 
   // console.log('pagination',pagination)
   const { data, status} = useQuery(['gallery',pagination], fetchGallery,{
@@ -53,16 +62,18 @@ function App() {
 
 
   const nextPagination = () =>{
-    // console.log('next', pagination)
-    setPagination(pagination + 1)
+
+    console.log('nexttt', data.next);
+    setPagination(data.next)
+    fetchGallery()
   }
 
   const prevPagination = () =>{
     // console.log('prev', pagination)
-    if (pagination <= 1){
-      setPagination(pagination - 1)
+    console.log('prevv', data.previous);
+    if (pagination != null ){
+      setPagination(data.previous)
     }
-    setPagination(parseInt(0))
   }
 
 
