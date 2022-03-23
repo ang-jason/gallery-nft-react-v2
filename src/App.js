@@ -72,9 +72,10 @@ function App() {
   const prevPagination = () =>{
     // console.log('prev', pagination)
     console.log('prevv', data.previous);
-    if (pagination != null ){
-      setPagination(data.previous)
-    }
+    // if (pagination != null ){
+    //   setPagination(data.previous)
+    // }
+    setPagination(data.previous)
   }
 
 
