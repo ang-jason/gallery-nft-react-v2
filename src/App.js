@@ -18,8 +18,8 @@ const fetchGallery = async (key,pagination) => {
 
   // const pagination = (key.queryKey[1] === undefined) ? null : key
 
-  console.log('pagenation33', pagination)
-  console.log('key', key)
+  // console.log('pagenation33', pagination)
+  // console.log('key', key)
 
   const options = {
     method: 'GET',
@@ -32,7 +32,7 @@ const fetchGallery = async (key,pagination) => {
 
 
   const url = pagination ? `https://api.opensea.io/api/v1/events?cursor=${pagination}` : `https://api.opensea.io/api/v1/events?`
-
+  console.log('url',url)
   const res = await fetch(url, options)
 
   // const res = await fetch(`https://api.opensea.io/api/v1/events?only_opensea=false&offset=0&limit=20`,options)
