@@ -11,14 +11,14 @@ export const GalleryContext=React.createContext()
 
 const apiKey = process.env.REACT_APP_NOT_SECRET_CODE
 
-const fetchGallery = async (key) => {
+const fetchGallery = async (key,pagination) => {
   // const pagination = (key.next === undefined) ? null : key.next
   // console.log('pagenation', pagination)
-  // const pagination = key.queryKey[1]
+
 
   // const pagination = (key.queryKey[1] === undefined) ? null : key
 
-  // console.log('pagenation33', pagination)
+  console.log('pagenation33', pagination)
   console.log('key', key)
 
   const options = {
@@ -30,7 +30,10 @@ const fetchGallery = async (key) => {
   // const res = await fetch(`https://api.opensea.io/api/v1/events?only_opensea=false&offset=${pagination}&limit=18`, options)
   // const res = await fetch(`https://api.opensea.io/api/v1/events?cursor=${pagination}`, options)
 
-  const res = await fetch(`https://api.opensea.io/api/v1/events?`, options)
+
+  const url = pagination ? `https://api.opensea.io/api/v1/events?cursor=${pagination}` : `https://api.opensea.io/api/v1/events?`
+
+  const res = await fetch(url, options)
 
   // const res = await fetch(`https://api.opensea.io/api/v1/events?only_opensea=false&offset=0&limit=20`,options)
 
@@ -64,7 +67,6 @@ function App() {
 
     console.log('nexttt', data.next);
     setPagination(data.next)
-    fetchGallery()
   }
 
   const prevPagination = () =>{
