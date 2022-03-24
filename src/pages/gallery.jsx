@@ -35,10 +35,13 @@ const fetchGallery = async (pagination) => {
     const [pagination, setPagination] = useState(null);
   
     const { data, status } = useQuery(["gallery", pagination], () =>
-      fetchGallery(pagination)
+        {
+            const fetchResults = fetchGallery(pagination)
+            console.log(Promise.resolve(fetchResults))
+            return fetchResults
+        }  
     );
   
-    console.log(data)
 
     const nextPagination = () => {
         console.log('next',data.next)
